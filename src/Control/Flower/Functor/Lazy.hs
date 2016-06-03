@@ -1,4 +1,4 @@
-module Functor.Lazy (lift, (<$), ($>)) where
+module Control.Flower.Functor.Lazy (lift, (<$), ($>)) where
 
 lift :: Functor f => (a -> b) -> f a -> f b
 lift = fmap
