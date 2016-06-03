@@ -1,6 +1,6 @@
 module Control.Flower.Monad (
-  module Flower.Monad.Lazy,
-  module Flower.Monad.Strict
+  module Control.Flower.Monad.Lazy,
+  module Control.Flower.Monad.Strict
 ) where
 
 import Control.Flower.Monad.Lazy

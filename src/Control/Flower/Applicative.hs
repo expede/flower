@@ -1,6 +1,6 @@
 module Control.Flower.Applicative (
-  module Flower.Applicative.Lazy,
-  module Flower.Applicative.Strict
+  module Control.Flower.Applicative.Lazy,
+  module Control.Flower.Applicative.Strict
 ) where
 
 import Control.Flower.Applicative.Lazy

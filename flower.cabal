@@ -1,33 +1,69 @@
-name:                flower
-version:             0.1.0.0
-synopsis:            Initial project template from stack
-description:         Please see README.md
-homepage:            https://github.com/expede/flower
-license:             MIT
-license-file:        LICENSE
-author:              Brooklyn Zelenka
-maintainer:          bez@brooklynzelenka.com
-category:            Combinators, Functions, Utility
-build-type:          Simple
--- extra-source-files:
-cabal-version:       >=1.24
+name:                  flower
+version:               1.0.0.0
+synopsis:              Initial project template from stack
+description:           Please see README.md
+homepage:              https://github.com/expede/flower#README
+
+license:               MIT
+license-file:          LICENSE
+
+author:                Brooklyn Zelenka
+maintainer:            bez@brooklynzelenka.com
+
+category:              Combinators, Functions, Utility
+build-type:            Simple
+
+extra-source-files:    README.md
+cabal-version:         >= 1.24
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
-  build-depends:       base >= 4.7 && < 5
-                     , flow >= 1.0 && 2
-  default-language:    Haskell2010
-  ghc-options:         -Wall -fno-warn-orphans
+  exposed-modules:     Control.Flower
+                     , Control.Flower.Functor
 
-test-suite flower-test
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      test
-  main-is:             Spec.hs
-  build-depends:       base
-                     , flower
-  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+                     , Control.Flower.Functor.Lazy
+                     , Control.Flower.Functor.Strict
+
+                     , Control.Flower.Applicative
+                     , Control.Flower.Applicative.Lazy
+                     , Control.Flower.Applicative.Strict
+
+                     , Control.Flower.Monad
+                     , Control.Flower.Monad.Lazy
+                     , Control.Flower.Monad.Strict
+
+  build-depends:       base == 4.*
+                     , flow ==1.0.*
+  hs-source-dirs:      src
+  ghc-options:         -Wall -fno-warn-orphans
   default-language:    Haskell2010
+
+-- test-suite flower-test
+--   type:                exitcode-stdio-1.0
+--   hs-source-dirs:      test
+--   main-is:             Spec.hs
+--   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+--   default-language:    Haskell2010
+--   build-depends:       base
+--                      , flow ==1.0.*
+--                      , flower
+--                      , tasty >= 0.10 && < 1.0
+--                      , tasty-hunit      >= 0.9 && < 1.0
+--                      , tasty-smallcheck >= 0.8 && < 1.0
+--                      , tasty-quickcheck >= 0.8 && < 1.0
+--                      , smallcheck       >= 1.1 && < 2.0
+--                      , checkers         >= 0.4 && < 1.0
+
+test-suite doctests
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  ghc-options:        -Wall +RTS -N -RTS -threaded
+  hs-source-dirs:      test
+  main-is:             doctests.hs
+  build-depends:       base
+                     , doctest >= 0.9 && < 1.0
+                     , flow ==1.0.*
+                     , flower
 
 source-repository head
   type:     git

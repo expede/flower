@@ -1,6 +1,6 @@
 module Control.Flower.Functor (
-  module Flower.Functor.Lazy,
-  module Flower.Functor.Strict
+  module Control.Flower.Functor.Lazy,
+  module Control.Flower.Functor.Strict
 ) where
 
 import Control.Flower.Functor.Lazy
