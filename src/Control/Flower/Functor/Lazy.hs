@@ -11,7 +11,7 @@ import Flow ((<|))
 -- $setup
 -- >>> import Flow ((|>), (<.), (.>))
 
-{- | Rename `fmap` to `lift` for consistency
+{-| Rename `fmap` to `lift` for consistency
 
 >>> lift (+1) <| Just 0
 Just 1
@@ -23,7 +23,7 @@ Just 1
 lift :: Functor f => (a -> b) -> f a -> f b
 lift = fmap
 
-{- | Alias for `apply`, for readability (especially when teaching)
+{-| Alias for `apply`, for readability (especially when teaching)
 
 >>> lift (+1) `over` Just 0
 Just 1
@@ -45,7 +45,7 @@ over :: (a -> b) -> a -> b
 over = (<|)
 
 infixr 4 <$
-{- | Operator for `lift` highlighting the direction of data flow
+{-| Operator for `lift` highlighting the direction of data flow
 
 >>> (+1) <$ Just 0
 Just 1
@@ -68,7 +68,7 @@ Just 24
 (<$) = lift
 
 infixl 4 $>
-{- | Operator for `lift` highlighting the reversed direction of data flow
+{-| Operator for `lift` highlighting the reversed direction of data flow
 
 >>> Just 0 $> (+1)
 Just 1

@@ -1,8 +1,17 @@
-{-# LANGUAGE Strict #-}
+{-|
+Module      : Control.Flower.Functor.Strict
+Description : Strict functor combinators (requires a monad instance)
+-}
 
-module Control.Flower.Functor.Strict (lift', over', (<!$), ($!>)) where
+module Control.Flower.Functor.Strict (
+  lift',
+  over',
+  (<!$),
+  ($!>)
+) where
 
-import Flow ((<!))
+import Control.Flower.Apply ((<!))
+import Control.Monad ((<$!>))
 
 -- $setup
 -- >>> import Flow ((<|))
@@ -16,8 +25,8 @@ Just 1
 [[2,3,4],[5,6,7]]
 
 -}
-lift' :: Functor f => (a -> b) -> f a -> f b
-lift' = fmap
+lift' :: Monad m => (a -> b) -> m a -> m b
+lift' = (<$!>)
 
 {- | Alias for `apply'`, for readability (especially when teaching)
 
@@ -28,22 +37,22 @@ Just 1
 over' :: (a -> b) -> a -> b
 over' = (<!)
 
-infixl 4 <!$
 {- | Operator for `lift'` highlighting the direction of data flow
 
 >>> (+1) <!$ Just 0
 Just 1
 
 -}
-(<!$) :: Functor f => (a -> b) -> f a -> f b
+infixr 4 <!$
+(<!$) :: Monad f => (a -> b) -> f a -> f b
 (<!$) = lift'
 
-infixl 4 $!>
 {- | Operator for `lift'` highlighting the reversed direction of data flow
 
 >>> Just 0 $!> (+1)
 Just 1
 
 -}
-($!>) :: Functor f => f a -> (a -> b) -> f b
+infixl 4 $!>
+($!>) :: Monad f => f a -> (a -> b) -> f b
 ($!>) = flip lift'

@@ -1,5 +1,5 @@
 name:                  flower
-version:               1.0.0.0
+version:               0.1.0.0
 synopsis:              Initial project template from stack
 description:           Please see README.md
 homepage:              https://github.com/expede/flower#README
@@ -19,8 +19,14 @@ cabal-version:         >= 1.24
 library
   hs-source-dirs:      src
   exposed-modules:     Control.Flower
-                     , Control.Flower.Functor
 
+                     , Control.Flower.Apply
+                     , Control.Flower.Apply.Lazy
+                     , Control.Flower.Apply.Strict
+
+                     , Control.Flower.Compose
+
+                     , Control.Flower.Functor
                      , Control.Flower.Functor.Lazy
                      , Control.Flower.Functor.Strict
 
@@ -29,8 +35,6 @@ library
                      , Control.Flower.Applicative.Strict
 
                      , Control.Flower.Monad
-                     , Control.Flower.Monad.Lazy
-                     , Control.Flower.Monad.Strict
 
   build-depends:       base == 4.*
                      , flow ==1.0.*
@@ -61,6 +65,7 @@ test-suite doctests
   hs-source-dirs:      test
   main-is:             doctests.hs
   build-depends:       base
+                     , QuickCheck ==2.8.*
                      , doctest >= 0.9 && < 1.0
                      , flow ==1.0.*
                      , flower
