@@ -1,4 +1,4 @@
-name:                  flower
+name:                  flow-er
 version:               1.0.0
 synopsis:              Initial project template from stack
 description:           Please see README.md
@@ -68,7 +68,7 @@ test-suite doctests
                      , QuickCheck ==2.8.*
                      , doctest >= 0.9 && < 1.0
                      , flow ==1.0.*
-                     , flower
+                     , flow-er
 
 source-repository head
   type:     git
