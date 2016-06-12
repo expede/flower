@@ -1,6 +1,6 @@
 name:                  flow-er
 version:               1.0.0
-synopsis:              Initial project template from stack
+synopsis:              Directional operators to for common combinators
 description:           Please see README.md
 homepage:              https://github.com/expede/flower#README
 
