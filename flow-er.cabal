@@ -1,5 +1,5 @@
 name:                  flow-er
-version:               1.0.0
+version:               1.0.1
 synopsis:              Directional operators to for common combinators
 description:           Please see README.md
 homepage:              https://github.com/expede/flower#README
