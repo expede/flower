@@ -22,7 +22,7 @@ for many common Haskell functions.
 
 With the pipe operator ('|>') proliferating through OCaml, F#, and Elixir,
 it's becoming clear which way the wind is blowing. A dataflow model is very
-natural to functional programming _____.
+natural to functional programming.
 
 Thinking in Haskell is multidimensional, reading forwards and backwards,
 and through levels of abstraction. This is extremely powerful, but does introduce
