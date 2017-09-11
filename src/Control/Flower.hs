@@ -26,7 +26,7 @@ natural to functional programming.
 
 Thinking in Haskell is multidimensional, reading forwards and backwards,
 and through levels of abstraction. This is extremely powerful, but does introduce
-a leaning curve (in grade school, when starting with Haskell, or both).
+a learning curve (in grade school, when starting with Haskell, or both).
 
 Here, instead of 'Prelude.$', we use '<|', or reversed with '|>'. Instead of
 'Prelude.<$>', we use '<$', and reversed '$>'. Many of the combinators are
